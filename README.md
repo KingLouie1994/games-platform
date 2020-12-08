@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# This is a website containing information and updated to all kinds of games for PC, PlayStation, X-Box and Nintendo Switch. I built it as part of a creative React course on the Internet.
+
+## Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -68,4 +70,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # games-platform
