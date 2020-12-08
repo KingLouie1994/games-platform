@@ -1,4 +1,4 @@
-# This is a website containing information and updated to all kinds of games for PC, PlayStation, X-Box and Nintendo Switch. I built it as part of a creative React course on the Internet.
+# This is a website containing information and updated to all kinds of games for PC, PlayStation, X-Box and Nintendo Switch. React, Redux and Axios are used to build this project. I built it as part of a creative React course.
 
 ## Getting Started with Create React App
 
