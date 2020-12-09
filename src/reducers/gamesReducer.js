@@ -1,6 +1,6 @@
 // Defining the initial State
 const initialState = {
-  popular: [],
+  popularGames: [],
   newGames: [],
   upcomingGames: [],
   searched: [],
@@ -10,7 +10,12 @@ const initialState = {
 const gamesReducer = (state = initialState, action) => {
   switch (action.type) {
     case "FETCH_GAMES":
-      return { ...state, popular: action.payload.popular };
+      return {
+        ...state,
+        popularGames: action.payload.popularGames,
+        newGames: action.payload.newGames,
+        upcomingGames: action.payload.upcomingGames,
+      };
     default:
       return { ...state };
   }
