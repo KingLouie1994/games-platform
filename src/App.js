@@ -1,7 +1,10 @@
+// Import Pages
+import Home from "./pages/Home";
+
 function App() {
   return (
     <div>
-      <h1>Games Platform</h1>
+      <Home />
     </div>
   );
 }
