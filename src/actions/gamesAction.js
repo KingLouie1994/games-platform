@@ -2,7 +2,12 @@
 import axios from "axios";
 
 // Import URL we want to fetch data from
-import { popularGamesUrl, newGamesUrl, upcomingGamesUrl } from "../api";
+import {
+  popularGamesUrl,
+  newGamesUrl,
+  upcomingGamesUrl,
+  searchGameUrl,
+} from "../api";
 
 // Create the actions
 export const loadGames = () => async (dispatch) => {
@@ -16,6 +21,16 @@ export const loadGames = () => async (dispatch) => {
       popularGames: popularData.data.results,
       newGames: newGamesData.data.results,
       upcomingGames: upcomingData.data.results,
+    },
+  });
+};
+
+export const loadSearched = (game_name) => async (dispatch) => {
+  const searchedGames = await axios.get(searchGameUrl(game_name));
+  dispatch({
+    type: "FETCH_SEARCHED",
+    payload: {
+      searched: searchedGames.data.results,
     },
   });
 };
