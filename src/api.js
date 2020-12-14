@@ -45,3 +45,5 @@ export const upcomingGamesUrl = () => `${base_url}${upcoming_games}`;
 
 // Game Details
 export const gameDetailsUrl = (gameId) => `${base_url}games/${gameId}`;
+export const gameScreenshotUrl = (gameId) =>
+  `${base_url}games/${gameId}/screenshots`;
