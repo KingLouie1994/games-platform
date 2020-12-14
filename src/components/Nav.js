@@ -34,9 +34,13 @@ const Nav = () => {
     setTextInput("");
   };
 
+  const clearSearchedHandler = () => {
+    dispatch({ type: "CLEAR_SEARCHED" });
+  };
+
   return (
     <StyledNav>
-      <Logo>
+      <Logo onClick={clearSearchedHandler}>
         <img src={logo} alt="logo" />
         <h1>Ignite</h1>
       </Logo>
