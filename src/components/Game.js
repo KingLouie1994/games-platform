@@ -17,6 +17,7 @@ import { motion } from "framer-motion";
 import { smallImage } from "../util";
 
 const Game = ({ name, released, image, id }) => {
+  const stringPathId = id.toString();
   // Fetch Details
   const dispatch = useDispatch();
 
@@ -27,7 +28,7 @@ const Game = ({ name, released, image, id }) => {
   };
 
   return (
-    <StyledGame layoutId={id} onClick={loadDetailHandler}>
+    <StyledGame layoutId={stringPathId} onClick={loadDetailHandler}>
       <Link to={`/games/${id}`}>
         <h3>{name}</h3>
         <p>{released}</p>
