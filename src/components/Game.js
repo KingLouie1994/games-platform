@@ -13,12 +13,16 @@ import styled from "styled-components";
 // Imports for Animation
 import { motion } from "framer-motion";
 
+// Import Utils
+import { smallImage } from "../util";
+
 const Game = ({ name, released, image, id }) => {
   // Fetch Details
   const dispatch = useDispatch();
 
   // Event Handlers
   const loadDetailHandler = () => {
+    document.body.style.overflow = "hidden";
     dispatch(loadDetail(id));
   };
 
@@ -27,7 +31,7 @@ const Game = ({ name, released, image, id }) => {
       <Link to={`/games/${id}`}>
         <h3>{name}</h3>
         <p>{released}</p>
-        <img src={image} alt={name} />
+        <img src={smallImage(image, 640)} alt={name} />
       </Link>
     </StyledGame>
   );

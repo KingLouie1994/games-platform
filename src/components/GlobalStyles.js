@@ -12,13 +12,14 @@ const GlobalStyles = createGlobalStyle`
     }
     html{
         &::-webkit-scrollbar{
-            width: 0;
+            width: 0.5rem;
         }
         &::-webkit-scrollbar-thumb{
             background: orange;
+            border-radius: 1rem;
         }
         &::-webkit-scrollbar-track {
-            background: white;
+            background: black;
         }
     }
     body{

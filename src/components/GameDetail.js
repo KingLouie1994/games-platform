@@ -10,6 +10,9 @@ import styled from "styled-components";
 // Imports for Animation
 import { motion } from "framer-motion";
 
+// Import Utils
+import { smallImage } from "../util";
+
 const GameDetail = () => {
   const history = useHistory();
 
@@ -45,14 +48,21 @@ const GameDetail = () => {
               </Info>
             </Stats>
             <Media>
-              <img src={game.background_image} alt={game.background_image} />
+              <img
+                src={smallImage(game.background_image, 1280)}
+                alt={game.background_image}
+              />
             </Media>
             <Description>
               <p>{game.description_raw}</p>
             </Description>
             <div className="gallery">
               {screenshots.results.map((screen) => (
-                <img src={screen.image} alt={screen.image} key={screen.id} />
+                <img
+                  src={smallImage(screen.image, 1280)}
+                  alt={screen.image}
+                  key={screen.id}
+                />
               ))}
             </div>
           </Detail>
@@ -76,9 +86,10 @@ const CardShadow = styled(motion.div)`
   }
   &::-webkit-scrollbar-thumb {
     background: orange;
+    border-radius: 1rem;
   }
   &::-webkit-scrollbar-track {
-    background: white;
+    background: black;
   }
 `;
 
