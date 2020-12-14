@@ -27,7 +27,7 @@ const Game = ({ name, released, image, id }) => {
   };
 
   return (
-    <StyledGame onClick={loadDetailHandler}>
+    <StyledGame layoutId={id} onClick={loadDetailHandler}>
       <Link to={`/games/${id}`}>
         <h3>{name}</h3>
         <p>{released}</p>
