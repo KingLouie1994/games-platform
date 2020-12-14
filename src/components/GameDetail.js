@@ -20,6 +20,8 @@ import xbox from "../img/xbox.svg";
 import nintendo from "../img/nintendo.svg";
 import apple from "../img/apple.svg";
 import gamepad from "../img/gamepad.svg";
+import starEmtpy from "../img/star-empty.png";
+import starFull from "../img/star-full.png";
 
 const GameDetail = ({ pathId }) => {
   const history = useHistory();
@@ -60,6 +62,20 @@ const GameDetail = ({ pathId }) => {
     }
   };
 
+  // Get Images for Rating
+  const getStars = () => {
+    const stars = [];
+    const rating = Math.floor(game.rating);
+    for (let i = 1; i <= 5; i++) {
+      if (i <= rating) {
+        stars.push(<img alt="star" key={i} src={starFull} />);
+      } else {
+        stars.push(<img alt="empty star" key={i} src={starEmtpy} />);
+      }
+    }
+    return stars;
+  };
+
   return (
     <>
       {!isLoading && (
@@ -68,7 +84,7 @@ const GameDetail = ({ pathId }) => {
             <Stats>
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
-                <p>Rating: {game.rating}</p>
+                <p>Rating: {getStars()}</p>
               </div>
               <Info>
                 <h3>Platforms:</h3>
