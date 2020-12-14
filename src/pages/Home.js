@@ -19,6 +19,7 @@ import styled from "styled-components";
 
 // Imports for Animation
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import { fadeIn } from "../animations";
 
 const Home = () => {
   // Get the current location
@@ -38,7 +39,7 @@ const Home = () => {
   );
 
   return (
-    <GameList>
+    <GameList variants={fadeIn} initial="hidden" animate="show">
       <AnimateSharedLayout>
         <AnimatePresence>
           {pathId && <GameDetail pathId={pathId} />}
