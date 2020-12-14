@@ -39,8 +39,10 @@ const Home = () => {
 
   return (
     <GameList>
-      <AnimateSharedLayout type="crossfade">
-        <AnimatePresence>{pathId && <GameDetail pathId={pathId} />}</AnimatePresence>
+      <AnimateSharedLayout>
+        <AnimatePresence>
+          {pathId && <GameDetail pathId={pathId} />}
+        </AnimatePresence>
         <h2>Upcoming Games</h2>
         <Games>
           {upcomingGames.map((game) => {
