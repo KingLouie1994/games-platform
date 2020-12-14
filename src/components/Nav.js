@@ -1,3 +1,12 @@
+// Imports from React
+import { useState } from "react";
+
+// Imports from Redux
+import { useDispatch } from "react-redux";
+
+// Import Actions
+import { loadSearched } from "../actions/gamesAction";
+
 // Imports for Styling
 import styled from "styled-components";
 
@@ -8,16 +17,35 @@ import { motion } from "framer-motion";
 import logo from "../img/logo.svg";
 
 const Nav = () => {
+  // State
+  const [textInput, setTextInput] = useState("");
+
+  // Fetch Searched Games
+  const dispatch = useDispatch();
+
+  // Event Handlers
+  const inputHandler = (e) => {
+    setTextInput(e.target.value);
+  };
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(loadSearched(textInput));
+    setTextInput("");
+  };
+
   return (
     <StyledNav>
       <Logo>
         <img src={logo} alt="logo" />
         <h1>Ignite</h1>
       </Logo>
-      <div className="search">
-        <input type="text" />
-        <button>Search</button>
-      </div>
+      <form className="search">
+        <input type="text" onChange={inputHandler} value={textInput} />
+        <button onClick={submitHandler} type="submit">
+          Search
+        </button>
+      </form>
     </StyledNav>
   );
 };
