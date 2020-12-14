@@ -40,7 +40,7 @@ const Nav = () => {
   };
 
   return (
-    <StyledNav>
+    <StyledNav variants={fadeIn} initial="hidden" animate="show">
       <Logo onClick={clearSearchedHandler}>
         <img src={logo} alt="logo" />
         <h1>Ignite</h1>
