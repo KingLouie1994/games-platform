@@ -1,3 +1,6 @@
+// Imports from React-Router-Dom
+import { Route } from "react-router-dom";
+
 // Import Pages
 import Home from "./pages/Home";
 
@@ -8,7 +11,9 @@ function App() {
   return (
     <div>
       <GlobalStyles />
-      <Home />
+      <Route path={["/games/:id", "/"]}>
+        <Home />
+      </Route>
     </div>
   );
 }

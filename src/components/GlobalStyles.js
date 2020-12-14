@@ -2,7 +2,7 @@
 import { createGlobalStyle } from "styled-components";
 
 // Imports for Animation
-import { motion } from "framer-motion";
+// import { motion } from "framer-motion";
 
 const GlobalStyles = createGlobalStyle`
     *{
@@ -16,6 +16,9 @@ const GlobalStyles = createGlobalStyle`
         }
         &::-webkit-scrollbar-thumb{
             background: orange;
+        }
+        &::-webkit-scrollbar-track {
+            background: white;
         }
     }
     body{
@@ -31,7 +34,7 @@ const GlobalStyles = createGlobalStyle`
     h3{
         font-size: 1.3rem;
         color: #333;
-        padding: 1.5rem;
+        padding: 1.5rem 0rem;
     }
     p{
         font-size: 1.2rem;

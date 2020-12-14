@@ -2,6 +2,7 @@
 const initialState = {
   game: {},
   screenshots: {},
+  isLoading: true,
 };
 
 // Creating the Reducer
@@ -12,6 +13,12 @@ const detailReducer = (state = initialState, action) => {
         ...state,
         game: action.payload.game,
         screenshots: action.payload.screenshots,
+        isLoading: false,
+      };
+    case "LOADING_DETAIL":
+      return {
+        ...state,
+        isLoading: true,
       };
     default:
       return { ...state };
