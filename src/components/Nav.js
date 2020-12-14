@@ -12,6 +12,7 @@ import styled from "styled-components";
 
 // Imports for Animation
 import { motion } from "framer-motion";
+import { fadeIn } from "../animations";
 
 // Import Logo as image
 import logo from "../img/logo.svg";
