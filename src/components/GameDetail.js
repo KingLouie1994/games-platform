@@ -84,7 +84,8 @@ const GameDetail = ({ pathId }) => {
             <Stats>
               <div className="rating">
                 <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
-                <p>Rating: {getStars()}</p>
+                <p>Rating: {game.rating}</p>
+                {getStars()}
               </div>
               <Info>
                 <h3>Platforms:</h3>
@@ -163,6 +164,11 @@ const Stats = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  img {
+    width: 2rem;
+    height: 2rem;
+    display: inline;
+  }
 `;
 
 const Info = styled(motion.div)`
